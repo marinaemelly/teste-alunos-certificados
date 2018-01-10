@@ -18,5 +18,10 @@ Route::get('/editar/{id}', ['as'=>'cursos.editar', 'uses'=>'CursoController@edit
 Route::put('/atualizar/{id}', ['as'=>'cursos.atualizar', 'uses'=>'CursoController@atualizar']);
 Route::get('/deletar/{id}', ['as'=>'cursos.deletar', 'uses'=>'CursoController@deletar']);
 
-Route::get('/relatorioMaisCertificados', ['as'=>'relatorio.maiscertificados', 'uses'=>'AlunoCertificadoController@alunosMaisCertificados']);
+Route::get('/relatorioMaisCertificados', ['as'=>'relatorio.maiscertificados', 'uses'=>'AlunoCertificadoController@buscarAlunosMaisCertificados']);
+
+Route::get('/relatorioCursosMaisCertificacoes', ['as'=>'relatorio.cursosmaiscertificados', 'uses'=>'CursoController@buscarCursosComMaisCertificacoes']);
+
+Route::get('/alunos', ['as'=>'alunos', 'uses'=>'AlunoController@buscarTodos']);
+
 

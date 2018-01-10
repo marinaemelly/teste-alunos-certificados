@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Curso;
+use Illuminate\Support\Facades\DB;
 
 class CursoController extends Controller
 {
@@ -58,4 +59,12 @@ class CursoController extends Controller
 
     	return redirect()->route('cursos');
     }
+
+
+    public function buscarCursosComMaisCertificacoes(){
+        $registros = DB::select('select cursos.*, count(*) as certificados from aluno_certificados as alucer inner join cursos on cursos.id = alucer.curso_id group by curso_id having certificados >= 100');
+        return view('relatorioCursosMaisCertificacoes', compact('registros'));
+    }
+
+
 }

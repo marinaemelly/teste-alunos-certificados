@@ -19,6 +19,19 @@
     <![endif]-->
   </head>
   <body>
+    <div class="container">
+      <ul class="nav nav-tabs"> 
+        <li role="presentation"><a href="{{route('cursos')}}">Cursos</a></li> 
+        <li role="presentation"><a href="{{route('alunos')}}">Alunos</a></li> 
+        <li role="presentation" class="dropdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Relatórios <span class="caret"></span> </a> 
+          <ul class="dropdown-menu"> 
+            <li><a href="{{route('relatorio.maiscertificados')}}">Relatório de alunos mais certificados</a></li> 
+            <li><a href="{{route('relatorio.cursosmaiscertificados')}}">Relatório de cursos com mais de 100 certificados</a></li> 
+           </ul> 
+        </li> 
+       </ul>
+
    
 
     
